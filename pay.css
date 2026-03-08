@@ -1,0 +1,432 @@
+/* Pay App Specific Styles */
+.pay-view {
+    background-color: #f2f2f7;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 44px; /* Safe area top */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150;
+}
+
+.pay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5ea;
+    height: 44px;
+}
+
+.pay-header-left, .pay-header-right {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #007aff;
+}
+
+.pay-header-right {
+    color: #000;
+}
+
+/* Segmented Control for iOS Style */
+.pay-segment-control {
+    display: flex;
+    background-color: #e5e5ea;
+    border-radius: 8px;
+    padding: 2px;
+    width: 160px;
+}
+
+.pay-segment-btn {
+    flex: 1;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #000;
+    transition: background-color 0.2s;
+}
+
+.pay-segment-btn.active {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pay-content {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.pay-tab {
+    display: none;
+    animation: payFadeIn 0.3s ease;
+    padding-bottom: 80px;
+}
+
+.pay-tab.active {
+    display: block;
+}
+
+@keyframes payFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards & Sections */
+.pay-total-card {
+    background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+    margin: 16px;
+    border-radius: 16px;
+    padding: 24px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 122, 255, 0.3);
+}
+
+.pay-invest-card {
+    background: linear-gradient(135deg, #ff9500 0%, #e65100 100%);
+    margin: 16px;
+    border-radius: 16px;
+    padding: 24px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(255, 149, 0, 0.3);
+}
+
+.pay-card-title {
+    font-size: 14px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pay-card-amount {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+    letter-spacing: -1px;
+}
+
+.pay-card-subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.pay-positive { color: #34c759; }
+.pay-total-card .pay-positive, .pay-invest-card .pay-positive { color: #ccffcc; }
+.pay-negative { color: #ff3b30; }
+
+.pay-quick-actions {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    margin: 0 16px;
+    padding: 20px 10px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.pay-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.pay-action-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+}
+
+.pay-action-btn:active .pay-action-icon {
+    transform: scale(0.9);
+}
+
+.pay-action-btn span {
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.pay-section {
+    margin: 20px 16px;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.pay-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pay-section-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.pay-section-more {
+    font-size: 13px;
+    color: #8e8e93;
+    cursor: pointer;
+}
+
+/* Bill List */
+.pay-bill-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.pay-bill-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f2f2f7;
+}
+
+.pay-bill-item:last-child {
+    border-bottom: none;
+}
+
+.pay-bill-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.pay-bill-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pay-bill-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.pay-bill-time {
+    font-size: 12px;
+    color: #8e8e93;
+    margin-top: 4px;
+}
+
+.pay-bill-amount {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.pay-empty-state {
+    padding: 30px 0;
+    text-align: center;
+    color: #8e8e93;
+    font-size: 14px;
+}
+
+/* Invest Tab Products */
+.pay-product-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f2f2f7;
+}
+
+.pay-product-item:last-child {
+    border-bottom: none;
+}
+
+.pay-product-rate {
+    font-size: 24px;
+    font-weight: 700;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.pay-product-desc {
+    font-size: 11px;
+    color: #8e8e93;
+    margin-top: 4px;
+}
+
+.pay-product-info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.pay-product-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.pay-product-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.pay-tag {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: rgba(52, 199, 89, 0.1);
+    color: #34c759;
+}
+
+.pay-buy-btn {
+    background-color: #007aff;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Modals */
+.pay-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 600;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    backdrop-filter: blur(10px);
+}
+
+.pay-modal-overlay.active {
+    display: flex;
+    animation: ytFadeIn 0.2s ease;
+}
+
+.pay-scan-container {
+    background: #fff;
+    width: 90%;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pay-scan-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.pay-scan-header i {
+    font-size: 20px;
+    color: #8e8e93;
+    cursor: pointer;
+}
+
+.pay-scan-barcode {
+    width: 100%;
+    height: 60px;
+    background: repeating-linear-gradient(90deg, #000, #000 4px, transparent 4px, transparent 8px, #000 8px, #000 10px, transparent 10px, transparent 14px);
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.pay-scan-qrcode {
+    width: 180px;
+    height: 180px;
+    background: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bank Cards */
+.pay-bank-card {
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    height: 120px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.pay-bank-name {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pay-bank-type {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.pay-bank-number {
+    font-size: 20px;
+    font-family: monospace;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.pay-bank-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.8;
+}
